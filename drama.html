@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drama Short Film | Olithirai</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left, #2c2c7aaa, transparent 80%),
+    radial-gradient(circle at bottom right, #7a0000aa, transparent 80%),
+    linear-gradient(160deg, #070707, #0f0f1a);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAV */
+.Navigation{
+  background:black;
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #1c1c1c;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#ff2b2b;
+  letter-spacing:3px;
+  text-decoration:none;
+}
+
+/* PAGE CONTENT */
+.page{
+  max-width:1100px;
+  margin:120px auto 80px;
+  padding:0 20px;
+  text-align:center;
+  animation:fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.page h1{
+  font-size:clamp(28px, 6vw, 46px);
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.page p{
+  max-width:760px;
+  margin:0 auto 36px;
+  color:#d1d1d1;
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* VIDEO BOX */
+.video-box{
+  width:100%;
+  max-width:900px;
+  aspect-ratio:16 / 9;
+  margin:0 auto;
+  background:rgba(0,0,0,0.85);
+  border-radius:18px;
+  border:1px solid #7a0000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 25px 70px rgba(0,0,0,0.85);
+  position:relative;
+  overflow:hidden;
+}
+
+.video-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255,255,255,0.06)
+    );
+}
+
+.video-box span{
+  position:relative;
+  font-size:18px;
+  color:#ff6666;
+  letter-spacing:1px;
+}
+
+/* FOOTER NOTE */
+.note{
+  margin-top:26px;
+  font-size:13px;
+  color:#aaa;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .Navigation{ padding:14px 20px; }
+  .page{ margin:90px auto 60px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="Navigation">
+  <a href="index.html" class="logo">OLITHIRAI</a>
+</nav>
+
+<section class="page">
+  <h1>Drama Short Film</h1>
+  <p>
+    A heartfelt short film that explores emotions, relationships,
+    and the intricacies of life with a cinematic touch.
+  </p>
+
+  <!-- Replace with actual short film -->
+  <div class="video-box">
+    <span>🎭 Drama Short Film – Video Coming Soon</span>
+  </div>
+
+  <div class="note">
+    Viewer discretion advised • Emotional content
+  </div>
+</section>
+
+</body>
+</html>

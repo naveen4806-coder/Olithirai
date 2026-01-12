@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thriller Shortfilm | Olithirai</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left, #ff0000aa, transparent 80%),
+    radial-gradient(circle at bottom right, #1900ffaa, transparent 80%),
+    linear-gradient(150deg, #0a0a0a, #1a0033);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ================= NAV ================= */
+.Navigation{
+  background:black;
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:clamp(20px, 5vw, 24px);
+  font-weight:bold;
+  color:red;
+  letter-spacing:3px;
+  text-decoration:none;
+}
+
+/* ================= PAGE CONTENT (READY) ================= */
+.page-wrapper{
+  max-width:1100px;
+  margin:80px auto;
+  padding:0 20px;
+  text-align:center;
+}
+
+.page-wrapper h1{
+  font-size:clamp(26px, 6vw, 42px);
+  margin-bottom:15px;
+}
+
+.page-wrapper p{
+  color:#ccc;
+  font-size:15px;
+  max-width:700px;
+  margin:0 auto;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:768px){
+
+  .Navigation{
+    padding:14px 20px;
+  }
+
+  .page-wrapper{
+    margin:60px auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="Navigation">
+  <a href="index.html" class="logo">OLITHIRAI</a>
+</nav>
+
+<!-- FUTURE CONTENT AREA -->
+<div class="page-wrapper">
+  <h1>Thriller Shortfilm</h1>
+  <p>
+    A gripping cinematic experience filled with suspense, mystery, and unexpected twists.
+  </p>
+</div>
+
+</body>
+</html>

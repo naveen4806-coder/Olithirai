@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thriller Pilot Film | Olithirai</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left, #ff0000aa, transparent 80%),
+    radial-gradient(circle at bottom right, #1900ffaa, transparent 80%),
+    linear-gradient(150deg, #0a0a0a, #12001f);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ================= NAV ================= */
+.Navigation{
+  background:black;
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:clamp(20px, 5vw, 24px);
+  font-weight:bold;
+  color:red;
+  letter-spacing:3px;
+  text-decoration:none;
+}
+
+/* ================= PAGE CONTENT ================= */
+.page{
+  max-width:1100px;
+  margin:120px auto 80px;
+  padding:0 20px;
+  text-align:center;
+  animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.page h1{
+  font-size:clamp(26px, 6vw, 44px);
+  margin-bottom:15px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.page p{
+  color:#ccc;
+  max-width:720px;
+  margin:0 auto 40px;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* ================= VIDEO BOX ================= */
+.video-box{
+  width:100%;
+  max-width:900px;
+  aspect-ratio:16 / 9;
+  margin:0 auto;
+  background:rgba(0,0,0,0.75);
+  border-radius:18px;
+  border:1px solid red;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 25px 70px rgba(0,0,0,0.8);
+  position:relative;
+  overflow:hidden;
+}
+
+.video-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,0,0,0.15)
+  );
+}
+
+.video-box span{
+  position:relative;
+  font-size:18px;
+  color:#ff4d4d;
+  letter-spacing:1px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:768px){
+
+  .Navigation{
+    padding:14px 20px;
+  }
+
+  .page{
+    margin:90px auto 60px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="Navigation">
+  <a href="index.html" class="logo">OLITHIRAI</a>
+</nav>
+
+<!-- CONTENT -->
+<section class="page">
+  <h1>Thriller Pilot Film</h1>
+  <p>
+    A gripping pilot film filled with suspense, mystery,
+    and unexpected twists that keep the audience on edge.
+  </p>
+
+  <!-- Replace with actual video later -->
+  <div class="video-box">
+    <span>🔪 Thriller Pilot Film – Video Coming Soon</span>
+  </div>
+</section>
+
+</body>
+</html>

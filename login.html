@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Olithirai | Auth</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left, #ff0000aa, transparent 80%),
+    radial-gradient(circle at bottom right, #1900ffaa, transparent 80%),
+    linear-gradient(150deg, #0a0a0a, #1a0033);
+  color:white;
+}
+
+/* ================= NAV ================= */
+.Navigation{
+  background:black;
+  padding:14px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:clamp(20px, 5vw, 24px);
+  font-weight:bold;
+  color:red;
+  letter-spacing:3px;
+  text-decoration:none;
+}
+
+/* ================= CONTAINER ================= */
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:85vh;
+  padding:20px;
+}
+
+/* ================= FORM ================= */
+.form-box{
+  background:rgba(0,0,0,0.75);
+  padding:40px;
+  width:100%;
+  max-width:360px;
+  border-radius:14px;
+  animation:fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.form-box h2{
+  text-align:center;
+  margin-bottom:20px;
+  font-size:clamp(20px, 5vw, 24px);
+}
+
+.form-box input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:6px;
+  outline:none;
+  font-size:14px;
+}
+
+.form-box button{
+  width:100%;
+  padding:12px;
+  background:red;
+  border:none;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+  font-size:15px;
+  transition:0.3s;
+}
+
+.form-box button:hover{
+  background:darkred;
+  transform:scale(1.03);
+}
+
+.switch{
+  text-align:center;
+  margin-top:15px;
+  font-size:13px;
+}
+
+.switch span{
+  color:red;
+  cursor:pointer;
+}
+
+/* Hide login initially */
+#loginForm{display:none;}
+
+/* ================= MOBILE ================= */
+@media (max-width:600px){
+
+  .Navigation{
+    padding:14px 20px;
+  }
+
+  .form-box{
+    padding:30px 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="Navigation">
+  <a href="index.html" class="logo">OLITHIRAI</a>
+</nav>
+
+<div class="container">
+
+  <!-- SIGN UP -->
+  <div class="form-box" id="signupForm">
+    <h2>Create Account</h2>
+    <input id="su_name" type="text" placeholder="Username" required>
+    <input id="su_mobile" type="tel" placeholder="Mobile Number" required>
+    <input id="su_email" type="email" placeholder="Email Address" required>
+    <input id="su_pass" type="password" placeholder="Password" required>
+    <button onclick="signup()">Sign Up</button>
+    <div class="switch">
+      Already have an account?
+      <span onclick="showLogin()"> Login</span>
+    </div>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="form-box" id="loginForm">
+    <h2>Welcome Back</h2>
+    <input id="li_email" type="email" placeholder="Email Address" required>
+    <input id="li_pass" type="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <div class="switch">
+      New to Olithirai?
+      <span onclick="showSignup()"> Sign Up</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const signupForm = document.getElementById("signupForm");
+const loginForm  = document.getElementById("loginForm");
+
+/* AUTO LOGIN CHECK */
+if(localStorage.getItem("olithirai_loggedIn")){
+  window.location.href = "payment.html";
+}
+
+function showLogin(){
+  signupForm.style.display="none";
+  loginForm.style.display="block";
+}
+
+function showSignup(){
+  loginForm.style.display="none";
+  signupForm.style.display="block";
+}
+
+/* SIGNUP */
+function signup(){
+  const name   = su_name.value;
+  const mobile = su_mobile.value;
+  const email  = su_email.value;
+  const pass   = su_pass.value;
+
+  if(!name || !mobile || !email || !pass){
+    alert("Fill all details");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("olithirai_users")) || [];
+
+  const exists = users.find(u => u.email === email);
+  if(exists){
+    alert("Email already registered. Please login.");
+    showLogin();
+    return;
+  }
+
+  users.push({name,mobile,email,pass});
+  localStorage.setItem("olithirai_users", JSON.stringify(users));
+  localStorage.setItem("olithirai_loggedIn", email);
+
+  window.location.href = "payment.html";
+}
+
+/* LOGIN */
+function login(){
+  const email = li_email.value;
+  const pass  = li_pass.value;
+
+  let users = JSON.parse(localStorage.getItem("olithirai_users")) || [];
+
+  const user = users.find(u => u.email === email && u.pass === pass);
+
+  if(user){
+    localStorage.setItem("olithirai_loggedIn", email);
+    window.location.href = "payment.html";
+  }else{
+    alert("Invalid email or password");
+  }
+}
+</script>
+
+</body>
+</html>
