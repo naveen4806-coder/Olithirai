@@ -162,7 +162,7 @@ const loginForm               = document.getElementById("loginForm");
 
 /* AUTO LOGIN CHECK */
 if(localStorage.getItem("olithirai_loggedIn")){
-  window.location.href        = "explore.html";
+  window.location.href        = "payment.html";
 }
 
 function showLogin(){
@@ -200,7 +200,7 @@ function signup(){
   localStorage.setItem("olithirai_users", JSON.stringify(users));
   localStorage.setItem("olithirai_loggedIn", email);
 
-  window.location.href        = "explore.html";
+  window.location.href        = "payment.html";
 }
 
 /* LOGIN */
@@ -214,7 +214,7 @@ function login(){
 
   if(user){
     localStorage.setItem("olithirai_loggedIn", email);
-    window.location.href      = "explore.html";
+    window.location.href      = "payment.html";
   }else{
     alert("Invalid email or password");
   }
