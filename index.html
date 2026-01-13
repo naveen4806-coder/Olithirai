@@ -1,208 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang                = "en">
 <head>
-<meta charset="utf-8">
+<meta charset             = "utf-8">
 <title>Olithirai</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name                = "viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+  margin                  : 0;
+  padding                 : 0;
+  box-sizing              : border-box;
 }
 
 /* ================= INTRO SCREEN ================= */
 #intro{
-  position:fixed;
-  inset:0;
-  background:black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  z-index:9999;
-  animation:introFadeOut 1.2s ease forwards;
-  animation-delay:4s;
-  text-align:center;
+  position                : fixed;
+  inset                   : 0;
+  background              : black;
+  display                 : flex;
+  justify-content         : center;
+  align-items             : center;
+  flex-direction          : column;
+  z-index                 : 9999;
+  animation               : introFadeOut 1.2s ease forwards;
+  animation-delay         : 4s;
+  text-align              : center;
 }
 
 #intro h1{
-  font-size:clamp(36px, 8vw, 60px);
-  letter-spacing:6px;
-  color:red;
-  animation:logoZoom 2s ease forwards;
+  font-size               : clamp(36px, 8vw, 60px);
+  letter-spacing          : 6px;
+  color                   : red;
+  animation               : logoZoom 2s ease forwards;
 }
 
 #intro p{
-  margin-top:15px;
-  font-size:14px;
-  color:#aaa;
-  opacity:0;
-  animation:textFade 1.5s ease forwards;
-  animation-delay:1.8s;
+  margin-top              : 15px;
+  font-size               : 14px;
+  color                   : #aaa;
+  opacity                 : 0;
+  animation               : textFade 1.5s ease forwards;
+  animation-delay         : 1.8s;
 }
 
 @keyframes logoZoom{
-  from{opacity:0; transform:scale(0.4);}
-  to{opacity:1; transform:scale(1);}
+  from{opacity            : 0; transform:scale(0.4);}
+  to{opacity              : 1; transform:scale(1);}
 }
 @keyframes textFade{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
+  from{opacity            : 0; transform:translateY(20px);}
+  to{opacity              : 1; transform:translateY(0);}
 }
 @keyframes introFadeOut{
-  to{opacity:0; visibility:hidden;}
+  to{opacity              : 0; visibility:hidden;}
 }
 
 /* ================= BODY ================= */
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  min-height:100vh;
-  background:
+  font-family             : Arial, Helvetica, sans-serif;
+  min-height              : 100vh;
+  background              : 
     radial-gradient(circle at top left, #ff0000aa, transparent 80%),
     radial-gradient(circle at bottom right, #1900ffaa, transparent 80%),
     linear-gradient(150deg, #0a0a0a, #1a0033);
-  color:white;
-  overflow-x:hidden;
+  color                   : white;
+  overflow-x              : hidden;
 }
 
 /* ================= NAV ================= */
 .Navigation{
-  background:black;
-  padding:14px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  background              : black;
+  padding                 : 14px 40px;
+  display                 : flex;
+  justify-content         : space-between;
+  align-items             : center;
 }
 
 .logo{
-  font-size:22px;
-  font-weight:bold;
-  color:red;
-  letter-spacing:3px;
-  text-decoration:none;
+  font-size               : 22px;
+  font-weight             : bold;
+  color                   : red;
+  letter-spacing          : 3px;
+  text-decoration         : none;
 }
 
 /* ================= HERO ================= */
 .main{
-  background:#0a0a0a;
-  width:80%;
-  min-height:60vh;
-  margin:10vh auto;
-  border-radius:40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  animation:heroUp 1.5s ease forwards;
-  padding:40px;
+  background              : #0a0a0a;
+  width                   : 80%;
+  min-height              : 60vh;
+  margin                  : 10vh auto;
+  border-radius           : 40px;
+  display                 : flex;
+  align-items             : center;
+  justify-content         : center;
+  animation               : heroUp 1.5s ease forwards;
+  padding                 : 40px;
 }
 
 @keyframes heroUp{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
+  from{opacity            : 0; transform:translateY(40px);}
+  to{opacity              : 1; transform:translateY(0);}
 }
 
 .inbuilt{
-  text-align:center;
-  max-width:600px;
+  text-align              : center;
+  max-width               : 600px;
 }
 
 .inbuilt h2{
-  font-size:clamp(24px, 5vw, 36px);
+  font-size               : clamp(24px, 5vw, 36px);
 }
 
 .inbuilt p{
-  margin:20px 0;
-  color:#ccc;
-  font-size:15px;
+  margin                  : 20px 0;
+  color                   : #ccc;
+  font-size               : 15px;
 }
 
 .inbuilt button{
-  padding:14px 36px;
-  background:red;
-  border:none;
-  color:white;
-  border-radius:8px;
-  font-size:16px;
-  cursor:pointer;
-  box-shadow:0 0 20px red;
-  transition:0.3s;
+  padding                 : 14px 36px;
+  background              : red;
+  border                  : none;
+  color                   : white;
+  border-radius           : 8px;
+  font-size               : 16px;
+  cursor                  : pointer;
+  box-shadow              : 0 0 20px red;
+  transition              : 0.3s;
 }
 
 .inbuilt button:hover{
-  transform:scale(1.08);
-  background:darkred;
+  transform               : scale(1.08);
+  background              : darkred;
 }
 
 /* ================= HIGHLIGHTS ================= */
 .highlights{
-  width:80%;
-  margin:70px auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+  width                   : 80%;
+  margin                  : 70px auto;
+  display                 : grid;
+  grid-template-columns   : repeat(auto-fit,minmax(220px,1fr));
+  gap                     : 25px;
 }
 
 .highlight-box{
-  background:rgba(0,0,0,0.75);
-  padding:30px;
-  border-radius:16px;
-  text-align:center;
-  transition:0.4s;
+  background              : rgba(0,0,0,0.75);
+  padding                 : 30px;
+  border-radius           : 16px;
+  text-align              : center;
+  transition              : 0.4s;
 }
 
 .highlight-box:hover{
-  transform:scale(1.08);
+  transform               : scale(1.08);
 }
 
 .highlight-box h3{
-  color:red;
-  margin-bottom:10px;
+  color                   : red;
+  margin-bottom           : 10px;
 }
 
 /* ================= GENRES ================= */
 .genres{
-  text-align:center;
-  margin:90px auto;
-  padding:0 20px;
+  text-align              : center;
+  margin                  : 90px auto;
+  padding                 : 0 20px;
 }
 
 .genre-list span{
-  display:inline-block;
-  margin:8px;
-  padding:10px 20px;
-  border:1px solid red;
-  border-radius:30px;
-  transition:0.3s;
-  font-size:14px;
+  display                 : inline-block;
+  margin                  : 8px;
+  padding                 : 10px 20px;
+  border                  : 1px solid red;
+  border-radius           : 30px;
+  transition              : 0.3s;
+  font-size               : 14px;
 }
 
 .genre-list span:hover{
-  background:red;
+  background              : red;
 }
 
 /* ================= MOBILE RESPONSIVE ================= */
 @media (max-width:768px){
 
   .Navigation{
-    padding:14px 20px;
+    padding               : 14px 20px;
   }
 
   .main{
-    width:92%;
-    margin:8vh auto;
-    border-radius:25px;
-    padding:30px 20px;
+    width                 : 92%;
+    margin                : 8vh auto;
+    border-radius         : 25px;
+    padding               : 30px 20px;
   }
 
   .highlights{
-    width:92%;
-    margin:50px auto;
+    width                 : 92%;
+    margin                : 50px auto;
   }
 
   .genres{
-    margin:60px auto;
+    margin                : 60px auto;
   }
 }
 </style>
@@ -211,48 +211,41 @@ body{
 <body>
 
 <!-- INTRO -->
-<div id="intro">
+<div id                   = "intro">
   <h1>OLITHIRAI</h1>
   <p>Get Yourself Into A Cinematic World</p>
 </div>
 
 <!-- NAV -->
-<nav class="Navigation">
-  <a href="index.html" class="logo" onclick="show(event)">OLITHIRAI</a>
+<nav class                = "Navigation">
+  <a href                 = "index.html" class="logo">OLITHIRAI</a>
 </nav>
 
-<script>
-function show(event){
-  event.preventDefault();
-  alert("Page will refresh if you click logo");
-}
-</script>
-
 <!-- HERO -->
-<div class="main">
-  <div class="inbuilt">
+<div class                = "main">
+  <div class              = "inbuilt">
     <h2>Step Into a Cinematic World With Us</h2>
     <p>Discover Shortfilms and Pilot Films from passionate creators.</p>
-    <a href="login.html"><button>Start Watching</button></a>
+    <a href               = "login.html"><button>Start Watching</button></a>
   </div>
 </div>
 
 <!-- HIGHLIGHTS -->
-<section class="highlights">
-  <div class="highlight-box">
+<section class            = "highlights">
+  <div class              = "highlight-box">
     <h3>🎬 Original Short Films</h3>
     <p>Real stories from independent filmmakers.</p>
   </div>
-  <div class="highlight-box">
+  <div class              = "highlight-box">
     <h3>🔥 Pilot Cinema</h3>
     <p>Raw & experimental storytelling.</p>
   </div>
 </section>
 
 <!-- GENRES -->
-<section class="genres">
+<section class            = "genres">
   <h2>Genres You Will Love</h2>
-  <div class="genre-list">
+  <div class              = "genre-list">
     <span>Thriller</span>
     <span>Drama</span>
     <span>Crime</span>
