@@ -193,10 +193,12 @@ function signup(){
     return;
   }
 
+  // Add user
   users.push({name,mobile,email,pass});
   localStorage.setItem("olithirai_users", JSON.stringify(users));
-  localStorage.setItem("olithirai_loggedIn", email);
 
+  // Automatically login after signup
+  localStorage.setItem("olithirai_loggedIn", email);
   window.location.href = "explore.html";
 }
 
@@ -206,13 +208,21 @@ function login(){
   const pass  = li_pass.value.trim();
 
   let users = JSON.parse(localStorage.getItem("olithirai_users")) || [];
+
+  console.log("Registered users:", users); // DEBUG: check registered emails
+
   const user = users.find(u => u.email === email && u.pass === pass);
 
   if(user){
     localStorage.setItem("olithirai_loggedIn", email);
     window.location.href = "explore.html";
   }else{
-    alert("Invalid email or password");
+    // Check if email exists but password wrong
+    if(users.find(u => u.email === email)){
+      alert("Incorrect password");
+    } else {
+      alert("Email not registered. Please sign up.");
+    }
   }
 }
 </script>
