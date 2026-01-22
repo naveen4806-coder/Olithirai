@@ -140,12 +140,6 @@ if(!localStorage.getItem("olithirai_loggedIn")){
   window.location.href = "login.html";
 }
 
-// 💳 PAYMENT CHECK
-if(!localStorage.getItem("olithirai_paid")){
-  alert("Please complete payment to watch this short film");
-  window.location.href = "payment.html";
-}
-
 // 🔓 LOGOUT FUNCTION
 function logout(){
   localStorage.clear();
@@ -156,3 +150,4 @@ function logout(){
 
 </body>
 </html>
+
