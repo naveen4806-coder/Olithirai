@@ -6,11 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -38,6 +34,24 @@ body{
   color:red;
   letter-spacing:3px;
   text-decoration:none;
+}
+
+/* ================= LOGOUT BUTTON ================= */
+.logout-btn{
+  background: transparent;
+  border: 1px solid red;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover{
+  background: red;
+  color: black;
 }
 
 /* ================= PAGE CONTENT ================= */
@@ -71,49 +85,39 @@ body{
 
 /* ================= VIDEO BOX ================= */
 .video-box{
-  width           : 100%;
-  max-width       : 900px;
-  aspect-ratio    : 16 / 9;
-  margin          : 0 auto;
-  background      : rgba(0,0,0,0.75);
-  border-radius   : 18px;
-  border          : 1px solid red;
-  display         : flex;
-  align-items     : center;
-  justify-content : center;
-  box-shadow      : 0 25px 70px rgba(0,0,0,0.8);
-  position        : relative;
-  overflow        : hidden;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.75);
+  border-radius: 18px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8);
+  position: relative;
+  overflow: hidden;
 }
 
 .video-box::before{
-  content         : "";
-  position        : absolute;
-  inset           : 0;
-  background      : linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255,0,0,0.15)
-  );
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255,0,0,0.15));
 }
 
 .video-box span{
-  position        : relative;
-  font-size       : 18px;
-  color           : #ff4d4d;
-  letter-spacing  : 1px;
+  position: relative;
+  font-size: 18px;
+  color: #ff4d4d;
+  letter-spacing: 1px;
 }
 
 /* ================= MOBILE ================= */
 @media (max-width:768px){
-
-  .Navigation{
-    padding:14px 20px;
-  }
-
-  .page{
-    margin:90px auto 60px;
-  }
+  .Navigation{padding:14px 20px;}
+  .page{margin:90px auto 60px;}
 }
 </style>
 </head>
@@ -123,9 +127,10 @@ body{
 <!-- NAV -->
 <nav class="Navigation">
   <a href="index.html" class="logo">OLITHIRAI</a>
+  <button class="logout-btn" onclick="logout()">Logout</button>
 </nav>
 
-<!-- CONTENT -->
+<!-- PAGE CONTENT -->
 <section class="page">
   <h1>Thriller Pilot Film</h1>
   <p>
@@ -133,11 +138,31 @@ body{
     and unexpected twists that keep the audience on edge.
   </p>
 
-  <!-- Replace with actual video later -->
   <div class="video-box">
     <span>🔪 Thriller Pilot Film – Video Coming Soon</span>
   </div>
 </section>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+// 🔐 LOGIN CHECK
+if(!localStorage.getItem("olithirai_loggedIn")){
+  window.location.href = "login.html";
+}
+
+// 💳 PAYMENT CHECK
+if(!localStorage.getItem("olithirai_paid")){
+  alert("Please complete payment to watch this pilot film");
+  window.location.href = "payment.html";
+}
+
+// 🔓 LOGOUT FUNCTION
+function logout(){
+  localStorage.clear();
+  sessionStorage.clear();
+  window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>
