@@ -18,7 +18,7 @@ body{
   color:white;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 .Navigation{
   background:black;
   padding:14px 40px;
@@ -35,7 +35,7 @@ body{
   text-decoration:none;
 }
 
-/* ================= CONTAINER ================= */
+/* CONTAINER */
 .container{
   display:flex;
   justify-content:center;
@@ -44,7 +44,7 @@ body{
   padding:20px;
 }
 
-/* ================= FORM ================= */
+/* FORM */
 .form-box{
   background:rgba(0,0,0,0.75);
   padding:40px;
@@ -62,7 +62,6 @@ body{
 .form-box h2{
   text-align:center;
   margin-bottom:20px;
-  font-size:clamp(20px,5vw,24px);
 }
 
 .form-box input{
@@ -106,7 +105,6 @@ body{
 /* Hide login initially */
 #loginForm{display:none;}
 
-/* ================= MOBILE ================= */
 @media (max-width:600px){
   .Navigation{padding:14px 20px;}
   .form-box{padding:30px 22px;}
@@ -154,12 +152,12 @@ body{
 const signupForm = document.getElementById("signupForm");
 const loginForm  = document.getElementById("loginForm");
 
-/* ================= AUTO LOGIN ================= */
+/* AUTO LOGIN */
 if(localStorage.getItem("olithirai_loggedIn")){
   window.location.href = "explore.html";
 }
 
-/* ================= FORM SWITCH ================= */
+/* FORM SWITCH */
 function showLogin(){
   signupForm.style.display = "none";
   loginForm.style.display  = "block";
@@ -170,15 +168,20 @@ function showSignup(){
   signupForm.style.display = "block";
 }
 
-/* ================= SIGN UP ================= */
+/* SIGN UP */
 function signup(){
   const name   = su_name.value.trim();
   const mobile = su_mobile.value.trim();
-  const email  = su_email.value.trim();
+  const email  = su_email.value.trim().toLowerCase();
   const pass   = su_pass.value.trim();
 
   if(!name || !mobile || !email || !pass){
     alert("Please fill all details");
+    return;
+  }
+
+  if(mobile.length < 10){
+    alert("Enter a valid mobile number");
     return;
   }
 
@@ -197,9 +200,9 @@ function signup(){
   window.location.href = "explore.html";
 }
 
-/* ================= LOGIN ================= */
+/* LOGIN */
 function login(){
-  const email = li_email.value.trim();
+  const email = li_email.value.trim().toLowerCase();
   const pass  = li_pass.value.trim();
 
   let users = JSON.parse(localStorage.getItem("olithirai_users")) || [];
